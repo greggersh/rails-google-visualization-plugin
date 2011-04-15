@@ -236,13 +236,13 @@ module GoogleVisualization
     def motion_chart_for(collection, options={}, *args, &block)
       motion_chart = MotionChart.new(self, collection, options)
       yield motion_chart
-      concat(motion_chart.render).html_safe
+      motion_chart.render.html_safe
     end
 
     def annotated_timeline_for(dates, options={}, *args, &block)
       annotated_timeline = AnnotatedTimeLine.new(self, dates, options)
       yield annotated_timeline
-      concat(annotated_timeline.render).html_safe
+      annotated_timeline.render.html_safe
     end
   end
 end
